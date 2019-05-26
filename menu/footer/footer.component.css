@@ -1,0 +1,19 @@
+a {
+    color: #fff;
+}
+a:hover {
+    color: #ccc;
+}
+.bg-dark-footer {
+    background-color: #434343;
+}
+.nav li:first-child {
+    background: 0 0;
+}
+.nav li {
+    display: inline-block;
+    padding: 0 5px 0 9px;
+    background-image: url('../../../assets/img/footer/footer_pipe.jpg');
+    background-position: left center;
+    background-repeat: no-repeat;
+}

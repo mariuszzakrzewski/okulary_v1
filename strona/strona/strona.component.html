@@ -1,0 +1,23 @@
+<div [ngClass]="'container-fluid'" *ngFor="let SinglePage of CurrentSinglePage">
+    <div [ngClass]="'row'">
+        <div [ngClass]="'col-12 p-0'">
+            <div [ngClass]="'p-5 font-weight-normal banner-page text-center'" [ngStyle]="{backgroundImage: 'url('+ SinglePage.image +')'}"></div>
+        </div>
+    </div>
+    <div [ngClass]="'container'">
+        <div [ngClass]="'row'">
+            <div [ngClass]="'col-12'">
+                <div [ngClass]="'h2 mt-3 mb-4 font-weight-light text-center text-lg-left'">
+                    {{SinglePage.post_title}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="'container'">
+        <div [ngClass]="'row'">
+            <div [ngClass]="'col-12'">
+                <div [ngClass]="'font-weight-light'" [innerHTML]="SinglePage.post_content | safeHtml"></div>
+            </div>
+        </div>
+    </div>
+</div>

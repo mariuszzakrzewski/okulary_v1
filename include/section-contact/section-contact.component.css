@@ -1,0 +1,27 @@
+.icon-email, .icon-marker, .icon-phone {
+    width: 35px;
+}
+.line-right {
+    position: absolute;
+    margin-top: 20px;
+    right: 0;
+    width: 40%;
+    height: 2px;
+    background-color: #333;
+}
+.display-line {
+    position: absolute;
+    margin-top: 20px;
+    width: 40%;
+    height: 2px;
+    background-color: #333;
+}
+.display-line-right {
+    right: 0;
+}
+.display-line-left {
+    left: 0;
+}
+.section-excerpt {
+    line-height: 10px;
+}

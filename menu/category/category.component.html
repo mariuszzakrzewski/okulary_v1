@@ -1,0 +1,19 @@
+<div [ngClass]="'container-fluid bg-dark-category-products position-fixed w-100 p-2'">
+    <div [ngClass]="'row'">
+        <div [ngClass]="'col-12'">
+            <ul [ngClass]="'nav navbar-dark justify-content-center text-uppercase font-weight-light'">
+                <li [ngClass]="'nav-item'" *ngFor="let navItem of MenuCategoryProducts">
+                    <a [ngClass]="'nav-link'" routerLink="/kategoria/{{navItem.slug_parse_last}}" *ngIf="navItem.type === 'taxonomy'">
+                        {{navItem.title}}
+                    </a>
+                    <a [ngClass]="'nav-link'" routerLink="/{{navItem.slug_parse_last}}" *ngIf="navItem.type === 'post_type'">
+                        {{navItem.title}}
+                    </a>
+                    <a [ngClass]="'nav-link'" href="{{navItem.slug}}" target="_blank" *ngIf="navItem.type === 'custom'">
+                        {{navItem.title}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

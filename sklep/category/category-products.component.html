@@ -1,0 +1,49 @@
+<div [ngClass]="'container-fluid'">
+    <div [ngClass]="'row'">
+        <div [ngClass]="'col-12 p-0'">
+            <div [ngClass]="'p-5 font-weight-normal banner-page text-center'" [ngStyle]="{backgroundImage: 'url(../../../assets/img/kategorie-produktow/bg-categorie-produktow.jpg)'}">
+
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="'container-fluid p-3 bg-light'">
+        <div [ngClass]="'row'">
+            <div [ngClass]="'col-12'">
+                <div [ngClass]="'text-right'">
+                    <ul [ngClass]="'list-inline mb-0'">
+                        <li [ngClass]="'list-inline-item'">
+                            <div [ngClass]="'btn-group'">
+                                <button type="button" [ngClass]="'btn btn-dark font-weight-light dropdown-toggle pl-5 pr-5 rounded-0'" [id]="'dropdownMenuButton'" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Sortuj według:
+                                </button>
+                                <div [ngClass]="'dropdown-menu rounded-0 font-weight-light dropdown-menu-right'" aria-labelledby="dropdownMenuButton">
+                                    <button [ngClass]="'dropdown-item'">Nazwa - rosnąco</button>
+                                    <div [ngClass]="'dropdown-divider'"></div>
+                                    <button [ngClass]="'dropdown-item'">Nazwa - malejaco</button>
+                                    <div [ngClass]="'dropdown-divider'"></div>
+                                    <button [ngClass]="'dropdown-item'">Cena - rosnaco</button>
+                                    <div [ngClass]="'dropdown-divider'"></div>
+                                    <button [ngClass]="'dropdown-item'">Cena - malejąco</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="'container-fluid mt-5'">
+        <div [ngClass]="'row'">
+            <div [ngClass]="'col-12 col-lg-3'" *ngFor="let product of DisplayProductsFromCategoryName">
+                <div [ngClass]="'card rounded-0 border-0 mb-5 pt-2 pb-2 shadow'">
+                    <img [src]="product.image" [ngClass]="'img-fluid mx-auto d-block pt-3'" [alt]="product.post_title"/>
+                    <div [ngClass]="'card-body text-center pt-2'">
+                        <h5 [ngClass]="'font-weight-light card-title text-uppercase pt-3'">{{product.post_title}}</h5>
+                        <h3 [ngClass]="'font-weight-normal text-uppercase pb-3'">{{product.produkt_cena}} zł</h3>
+                        <a routerLink="/produkt/{{product.post_name}}" [ngClass]="'btn btn-dark rounded-0 border-0 text-uppercase font-weight-light pl-5 pr-5'">Zobacz więcej</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

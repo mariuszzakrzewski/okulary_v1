@@ -1,0 +1,41 @@
+<div [ngClass]="'section-contact'">
+  <div [ngClass]="'container text-center'">
+    <div [ngClass]="'row'">
+      <div [ngClass]="'col-12'">
+        <div [ngClass]="'h2 text-uppercase section-title font-weight-bold mb-4'">Kontakt</div>
+        <div [ngClass]="'section-excerpt'">
+          <ng-container *ngFor="let singleSekcjaKontakt of PokazPostSekcjaKontaktID">
+            <div *ngIf="singleSekcjaKontakt.ID === 211" [innerHTML]="singleSekcjaKontakt.post_content | safeHtml"></div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="'container-fluid text-center font-weight-light'" *ngFor="let singleSekcjaKontakt of PokazPostSekcjaKontaktID">
+    <ng-container *ngIf="singleSekcjaKontakt.ID === 211">
+      <div [ngClass]="'row'">
+        <div [ngClass]="'col-12 col-lg-4 pr-lg-0'">
+          <div [ngClass]="'display-line display-line-right'"></div>
+          <img [alt]="'email'" [src]="'../../../assets/img/icon/envelope-regular.svg'" [ngClass]="'mx-auto d-block img-fluid icon-email'"/>
+          <p [ngClass]="'mb-0 mt-5'">{{singleSekcjaKontakt.sekcjaKontaktAdresEmail}}</p>
+        </div>
+        <div [ngClass]="'col-12 col-lg-4 pl-lg-0 pr-lg-0'">
+          <div [ngClass]="'display-line display-line-left'"></div>
+          <div [ngClass]="'display-line display-line-right'"></div>
+          <img [alt]="'email'" [src]="'../../../assets/img/icon/map-marker-alt-solid.svg'" [ngClass]="'mx-auto d-block img-fluid icon-marker'"/>
+          <p [ngClass]="'mb-0 mt-5'" [innerHTML]="singleSekcjaKontakt.sekcjaKontaktInformacja | safeHtml"></p>
+        </div>
+        <div [ngClass]="'col-12 col-lg-4'">
+          <div [ngClass]="'display-line display-line-left'"></div>
+          <img [alt]="'email'" [src]="'../../../assets/img/icon/phone.svg'" [ngClass]="'mx-auto d-block img-fluid icon-phone'"/>
+          <p [ngClass]="'mb-0 mt-5'" [innerHTML]="singleSekcjaKontakt.sekcjaKontaktTelefon | safeHtml"></p>
+        </div>
+      </div>
+    </ng-container>
+    <div [ngClass]="'row'">
+      <div [ngClass]="'col-12'">
+        <div [ngClass]="'pb-5'"></div>
+      </div>
+    </div>
+  </div>
+</div>

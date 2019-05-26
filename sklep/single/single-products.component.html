@@ -1,0 +1,68 @@
+<div [ngClass]="'container-fluid bg-dark'">
+    <div [ngClass]="'row'">
+        <div [ngClass]="'col-12'">
+            <div [ngClass]="'p-5'"></div>
+        </div>
+    </div>
+</div>
+<div [ngClass]="'container-fluid pt-4'" *ngFor="let SingleProduct of CurrentSingleProdukt">
+    <div [ngClass]="'row'">
+        <div [ngClass]="'col-12 col-lg-6'">
+            <img [src]="SingleProduct.image_big" [ngClass]="'mx-auto d-block img-fluid'" [alt]="SingleProduct.title">
+        </div>
+        <div [ngClass]="'col-12 col-lg-6 pt-2'">
+            <div [ngClass]="'single-product-title text-white text-center text-lg-left'">
+                <div [ngClass]="'h3 font-weight-light p-3'">{{SingleProduct.title}}</div>
+            </div>
+            <div [ngClass]="'single-product-size-guide text-center bg-light p-4'">
+                <div [ngClass]="'row'">
+                    <div [ngClass]="'col-12 col-lg-3'">
+                        <img [src]="'../../../assets/img/produkt-rozmiary/size-guide-lens-width.svg'" [alt]="'Szerokość Szkła'">
+                        <div [ngClass]="'pt-2'">Szerokość szkła [mm]</div>
+                        <div [ngClass]="'h1 font-weight-light'">{{SingleProduct.produkt_rozmiar_szerokosc_szkiel_okularowych}}</div>
+                    </div>
+                    <div [ngClass]="'col-12 col-lg-3'">
+                        <img [src]="'../../../assets/img/produkt-rozmiary/size-guide-lens-height.svg'" [alt]="'Wysokość szkła'">
+                        <div [ngClass]="'pt-2'">Wysokość szkła [mm]</div>
+                        <div [ngClass]="'h1 font-weight-light'">{{SingleProduct.produkt_rozmiar_wysokosc_szkiel_okularowych}}</div>
+                    </div>
+                    <div [ngClass]="'col-12 col-lg-3'">
+                        <img [src]="'../../../assets/img/produkt-rozmiary/size-guide-bridge.svg'" [alt]="'Szerokość mostka'">
+                        <div [ngClass]="'pt-2'">Szerokość mostka [mm]</div>
+                        <div [ngClass]="'h1 font-weight-light'">{{SingleProduct.produkt_rozmiar_szerokosc_mostka}}</div>
+                    </div>
+                    <div [ngClass]="'col-12 col-lg-3'">
+                        <img [src]="'../../../assets/img/produkt-rozmiary/size-guide-temple-length.svg'" [alt]="'Długość zausznika'">
+                        <div [ngClass]="'pt-2'">Długość zausznika [mm]</div>
+                        <div [ngClass]="'h1 font-weight-light'">{{SingleProduct.produkt_rozmiar_dlugosc_zausznikow}}</div>
+                    </div>
+                </div>
+            </div>
+            <div [ngClass]="'single-product-price font-weight-light pt-2 pb-2'">
+                <div [ngClass]="'h2 font-weight-light'">cena: <span [ngClass]="'display-4 text-uppercase'">{{SingleProduct.produkt_cena}} zł</span></div>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="'row'">
+        <div [ngClass]="'col-12'">
+            <div [ngClass]="'p-3'"></div>
+        </div>
+    </div>
+    <div [ngClass]="'row'">
+        <div [ngClass]="'col-12'">
+            <div [ngClass]="'single-product-description text-center text-white'">
+                <div [ngClass]="'h3 font-weight-light p-3 text-uppercase'">Opis produktu</div>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="'row'">
+        <div [ngClass]="'col-12'">
+            <div [ngClass]="'font-weight-light p-4'" [innerHTML]="SingleProduct.produkt_opis | safeHtml"></div>
+        </div>
+    </div>
+    <div [ngClass]="'row'">
+        <div [ngClass]="'col-12'">
+            <div [ngClass]="'p-3'"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div [ngClass]="'jumbotron jumbotron-fluid bg-dark mb-0 p-0 position-relative'">
+   <div [ngClass]="'preloader-slider'">
+      <img [src]="'../../../assets/img/preloader/preloader-slider.svg'" [alt]="'Okulary Carrera Vintage – Salon Optyczny Zdzisław Robak'" [ngClass]="'mx-auto d-block img-fluid'"/>
+   </div>
+   <div [ngClass]="'container-fluid'">
+      <div [ngClass]="'row'">
+         <div [ngClass]="'col-12 p-0'">
+            <div [id]="'carouselMainSlider'" [ngClass]="'carousel slide carousel-fade'" data-ride="carousel">
+               <!-- Pagination -->
+               <ol [ngClass]="'carousel-indicators'">
+                  <ng-container *ngFor="let singlePagination of slajdy$ | async; let i = index;">
+                     <li data-target="#carouselMainSlider" [attr.data-slide-to]="i" [ngClass]="{'active': i === 0}"></li>
+                  </ng-container>
+               </ol>
+               <div [ngClass]="'carousel-inner'">
+                  <ng-container *ngFor="let singleSlider of slajdy$ | async; let i = index;">
+                     <div class="carousel-item" [ngClass]="{'active': i === 0}">
+                        <div [ngClass]="'img-slider d-block w-100'" [ngStyle]="{'background-image': 'url(' + singleSlider?.image + ')'}"></div>
+                        <div [ngClass]="'carousel-caption d-none d-md-block text-left'">
+                           <div [ngClass]="'dodatkowy-slogan'">{{singleSlider?.dodatkowy_slogan}}</div>
+                           <h5 [ngClass]="'glowny-slogan'">{{singleSlider?.glowny_slogan | uppercase}}</h5>
+                           <ng-container *ngIf="singleSlider?.dodatkowy_link_slider">
+                              <button [ngClass]="'btn btn-light btn-lg rounded-0'">Dowiedz się więcej</button>
+                           </ng-container>
+                           <ng-container *ngIf="singleSlider?.znizka_slogan">
+                              <div [ngClass]="'znizka-slogan'">
+                                 {{singleSlider.znizka_slogan}}
+                              </div>
+                           </ng-container>
+                        </div>
+                     </div>
+                  </ng-container>
+               </div>
+               <!-- Arrow left and right -->
+               <a [ngClass]="'carousel-control-prev'" [href]="'#carouselMainSlider'" role="button" data-slide="prev">
+                  <span [ngClass]="'carousel-control-prev-icon'" aria-hidden="true"></span>
+                  <span [ngClass]="'sr-only'">Previous</span>
+               </a>
+               <a [ngClass]="'carousel-control-next'" [href]="'#carouselMainSlider'" role="button" data-slide="next">
+                  <span [ngClass]="'carousel-control-next-icon'" aria-hidden="true"></span>
+                  <span [ngClass]="'sr-only'">Next</span>
+               </a>
+               <!-- Arrow left and right end -->
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

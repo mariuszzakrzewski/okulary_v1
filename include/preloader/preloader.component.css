@@ -1,0 +1,16 @@
+.preloader {
+   background-color: #323639;
+   width: 100%;
+   left: 0;
+   top: 0;
+   height: 100%;
+   min-height: 100vh;
+   z-index: 9999;
+   -moz-box-direction: normal;
+   -moz-box-orient: vertical;
+   -moz-box-pack: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+}

@@ -1,0 +1,38 @@
+<div [ngClass]="'section-polecane-produkty text-center mt-5'">
+    <div [ngClass]="'container'">
+        <div [ngClass]="'row'">
+            <div [ngClass]="'col-12'">
+                <div [ngClass]="'h2 text-uppercase section-title font-weight-bold mb-4'">Polecane produkty</div>
+                <div [ngClass]="'section-excerpt'" *ngFor="let sekcjaID of PokazPostID">
+                    <ng-container *ngIf="sekcjaID.ID === 208">
+                        <div [innerHTML]="sekcjaID.post_content | safeHtml"></div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="'container-fluid mt-5'">
+        <div [ngClass]="'row'">
+            <div [ngClass]="'col-12 col-lg-1'"></div>
+            <div [ngClass]="'col-12 col-lg-10'">
+                <!-- start -->
+                <div [ngClass]="'row'">
+                    <div [ngClass]="'col-12 col-lg-3'" *ngFor="let produktPolecany of WszystkieProduktyPolecae">
+                        <ng-container *ngIf="produktPolecany.produkt_polecany === 'tak'">
+                            <div [ngClass]="'card rounded-0 border-0'">
+                                <img [src]="produktPolecany.image" [ngClass]="'img-fluid mx-auto d-block'" [alt]="produktPolecany.post_title"/>
+                                <div [ngClass]="'card-body text-center pt-5'">
+                                    <h5 [ngClass]="'font-weight-light card-title text-uppercase pt-3'">{{produktPolecany.post_title}}</h5>
+                                    <h3 [ngClass]="'font-weight-normal text-uppercase pb-3'">{{produktPolecany.produkt_cena}} zł</h3>
+                                    <a routerLink="/produkt/{{produktPolecany.slug_produkt}}" [ngClass]="'btn btn-dark rounded-0 border-0 text-uppercase font-weight-light pl-5 pr-5'">Zobacz więcej</a>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <!-- end -->
+            </div>
+            <div [ngClass]="'col-12 col-lg-1'"></div>
+        </div>
+    </div>
+</div>

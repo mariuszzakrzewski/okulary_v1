@@ -1,0 +1,11 @@
+.bg-dark-category-products {
+    background-color: #333;
+    bottom: 0;
+    z-index: 9;
+}
+.bg-dark-category-products a {
+    color: #fff;
+}
+.bg-dark-category-products a:hover {
+    color: #ccc;
+}

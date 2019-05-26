@@ -1,0 +1,10 @@
+.section-subfooter {
+    background-color: #333;
+}
+.section-subfooter a {
+    color: #fff;
+    text-decoration: underline;
+}
+.copyright {
+    color: #ccc;
+}

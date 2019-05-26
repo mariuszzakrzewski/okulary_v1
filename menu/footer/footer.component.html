@@ -1,0 +1,13 @@
+<div [ngClass]="'container-fluid bg-dark-footer'">
+    <div [ngClass]="'row'">
+        <div [ngClass]="'col-12 p-3'">
+            <ul [ngClass]="'nav justify-content-center text-uppercase'">
+                <li [ngClass]="'nav-item'" *ngFor="let navItem of MenuStopka">
+                    <a *ngIf="navItem.type == 'taxonomy'" [ngClass]="'nav-link'" routerLink="/kategoria/{{navItem.slug_parse_last}}" routerLinkActive="active">{{navItem.title}}</a>
+                    <a *ngIf="navItem.type == 'custom'" [ngClass]="'nav-link'" routerLink="{{navItem.slug}}" target="_blank">{{navItem.title}}</a>
+                    <a *ngIf="navItem.type == 'post_type'" [ngClass]="'nav-link'" routerLink="/{{navItem.slug_parse_last}}" routerLinkActive="active">{{navItem.title}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

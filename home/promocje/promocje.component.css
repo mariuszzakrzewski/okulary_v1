@@ -1,0 +1,68 @@
+.banner .thumb a {
+   overflow: hidden;
+   position: relative;
+   display: block;
+   color: #fff;
+}
+.banner .thumb a::after {
+   background: #ffffff none repeat scroll 0 0;
+   bottom: 0;
+   content: "";
+   height: 0;
+   opacity: 0;
+   pointer-events: none;
+   position: absolute;
+   right: 0;
+   transition: all 0.5s ease 0s;
+   width: 0;
+}
+.banner .thumb a::before {
+   background: #ffffff none repeat scroll 0 0;
+   content: "";
+   height: 0;
+   left: 0;
+   opacity: 0;
+   pointer-events: none;
+   position: absolute;
+   top: 0;
+   transition: all 0.5s ease 0s;
+   width: 0;
+}
+.banner .thumb a:hover::before {
+   height: 100%;
+   opacity: 0.3;
+   width: 100%;
+}
+.banner .thumb a:hover::after {
+   height: 100%;
+   opacity: 0.3;
+   width: 100%;
+}
+.position-content-caption {
+   position: absolute;
+   max-width: 300px;
+   top: 50%;
+   transform: translateY(-50%);
+   bottom: initial;
+}
+.position-left-text {
+   left: 20px;
+}
+.position-right-text {
+   right: 20px;
+}
+.text-first-banner-promocje {
+   font-weight: 300;
+   font-size: 22px;
+}
+.text-second-banner-promocje {
+   font-weight: bold;
+   font-size: 24px;
+}
+.text-znizki-banner-promocje {
+   font-size: 20px;
+}
+.link-banner-promocje {
+   font-weight: 300;
+   font-size: 20px;
+}

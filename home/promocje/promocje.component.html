@@ -1,0 +1,29 @@
+<div [ngClass]="'section-promocje'">
+   <div [ngClass]="'container-fluid'">
+      <div [ngClass]="'row'">
+         <div [ngClass]="'col-12 col-lg-4 p-0 position-relative'" *ngFor="let singleBannerPromocyjny of GlowneBanneryPromocyjne$ | async">
+            <div [ngClass]="'banner'">
+               <div [ngClass]="'thumb'">
+                  <a href="{{singleBannerPromocyjny.link_banner_promocje}}">
+                     <img [alt]="singleBannerPromocyjny.text_second_banner_promocje" [src]="singleBannerPromocyjny.image" [ngClass]="'img-fluid mx-auto d-block'">
+                     <div class="position-content-caption" [ngClass]="{'position-left-text': singleBannerPromocyjny.position_content_banner_promocje === 'left_page', 'position-right-text': singleBannerPromocyjny.position_content_banner_promocje === 'right_page', 'text-white': singleBannerPromocyjny.text_color_banner_promocje === 'white', 'text-dark': singleBannerPromocyjny.text_color_banner_promocje === 'dark'}">
+                        <div [ngClass]="'text-first-banner-promocje'">
+                           {{singleBannerPromocyjny.text_first_banner_promocje}}
+                        </div>
+                        <div [ngClass]="'text-second-banner-promocje'">
+                           {{singleBannerPromocyjny.text_second_banner_promocje}}
+                        </div>
+                        <div [ngClass]="'text-znizki-banner-promocje'">
+                           <span [innerHTML]="singleBannerPromocyjny.text_znizki_banner_promocje"></span>
+                        </div>
+                        <div [ngClass]="'link-banner-promocje'" *ngIf="singleBannerPromocyjny.link_banner_promocje">
+                           Zobacz
+                        </div>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

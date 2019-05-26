@@ -1,0 +1,50 @@
+<nav [ngClass]="'navbar fixed-top navbar-expand-lg navbar-dark bg-transparent text-uppercase main-menu'">
+    <div [ngClass]="'position-fixed'">
+        <ul [ngClass]="'list-inline'">
+            <li [ngClass]="'list-inline-item'">
+                <img [src]="'../../../assets/img/logo/carrera.svg'" [ngClass]="'logo-carrera'" [alt]="'Carrera'"/>
+            </li>
+            <li [ngClass]="'list-inline-item'">
+                <a routerLink="/strona-glowna" [title]="'Okulary Carrera Vintage – Salon Optyczny Zdzisław Robak'">
+                    <img [src]="'../../../assets/img/logo/robak.png'" [ngClass]="'logo-robak'" [alt]="'Okulary Carrera Vintage – Salon Optyczny Zdzisław Robak'"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <button [ngClass]="'navbar-toggler'" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span [ngClass]="'navbar-toggler-icon'"></span>
+    </button>
+    <div [ngClass]="'collapse navbar-collapse'" [id]="'navbarNav'">
+        <ul [ngClass]="'navbar-nav mx-auto'">
+            <li [ngClass]="'nav-item'">
+                <a [ngClass]="'nav-link'" routerLink="/strona-glowna" routerLinkActive="active">Home</a>
+            </li>
+            <li [ngClass]="'nav-item'" *ngFor="let singleLink of MenuGlowna">
+                <a *ngIf="singleLink.type == 'post_type'" [ngClass]="'nav-link'" routerLink="{{singleLink.slug_parse_last}}">{{singleLink.title}}</a>
+                <a *ngIf="singleLink.type == 'custom'" [ngClass]="'nav-link'" target="_blank" routerLink="{{singleLink.slug}}">{{singleLink.title}}</a>
+                <a *ngIf="singleLink.type == 'taxonomy'" [ngClass]="'nav-link'" routerLink="/kategoria/{{singleLink.slug_parse_last}}">{{singleLink.title}}</a>
+            </li>
+            <!--<li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                </div>
+            </li>-->
+            <!--<li class="nav-item">
+               <a href="https://www.optycy.pl/" target="_blank" class="nav-link">Salon optyczny</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Oferta</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">FAQ</a>
+            </li>
+            <li class="nav-item">
+               <a  class="nav-link" href="#">Kontakt</a>
+            </li>-->
+        </ul>
+    </div>
+</nav>

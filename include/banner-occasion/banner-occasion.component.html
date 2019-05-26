@@ -1,0 +1,18 @@
+<div *ngFor="let singleBannerOccasion of SekcjaBannerOccasionID">
+  <ng-container *ngIf="singleBannerOccasion.ID === 209">
+    <div [ngClass]="'section section-wyroznione mt-5 mb-5'">
+      <div [ngClass]="'container-fluid'">
+        <div [ngClass]="'row'">
+          <div [ngClass]="'col-6 text-center bg-wyroznione position-relative'">
+            <div [ngClass]="'wyroznione-info text-white'" [innerHTML]="singleBannerOccasion.post_content | safeHtml"></div>
+          </div>
+          <div [ngClass]="'col-6 p-0'">
+            <div [ngClass]="'mt-2 mb-2 pt-3 pb-3'">
+              <img [src]="singleBannerOccasion.image" [ngClass]="'img-fluid'"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
